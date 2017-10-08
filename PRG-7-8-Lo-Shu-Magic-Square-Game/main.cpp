@@ -33,6 +33,8 @@ int intSumDiag1;
 int intSumDiag2;
 
 void generateArray(int [][INT_COLS]);
+void initializeArray(int [][INT_COLS]);
+void drawBoard(const int [][INT_COLS]);
 void calculateIfSquare(const int [][INT_COLS]);
 
 int main()
@@ -43,8 +45,11 @@ int main()
     
     do
     {
+        initializeArray(intArray);
+        
         generateArray(intArray);
         
+        // Query for replay, default replay if solution is not found
         cout << "Would you like to continue? Enter \'n\' to quit.\n";
         cin >> chrContinue;
         
@@ -54,19 +59,22 @@ int main()
     return 0;
 }
 
+// Simple loop through rows and cols to initialize all values to 0
+void initializeArray(int intArray[][INT_COLS])
+{
+    for(int i = 0 ; i < INT_ROWS ; i++)
+    {
+        for(int j = 0 ; j < INT_COLS ; j++)
+        {
+            intArray[i][j] = 0;
+        }
+    }
+}
+
 void generateArray(int intArray[][INT_COLS])
 {
+    // Hold user input, written over each time
     int intCurrentInput;
-    
-    bool booNum1 = false;
-    bool booNum2 = false;
-    bool booNum3 = false;
-    bool booNum4 = false;
-    bool booNum5 = false;
-    bool booNum6 = false;
-    bool booNum7 = false;
-    bool booNum8 = false;
-    bool booNum9 = false;
     
     do
     {
@@ -74,8 +82,12 @@ void generateArray(int intArray[][INT_COLS])
         {
             for (int cols = 0; cols < INT_COLS; cols++)
             {
+                // Draw board here
+                drawBoard(intArray);
+                
                 cout << "Please enter a number for position [" << rows + 1 << ", " << cols + 1 << "]: ";
                 cin >> intCurrentInput;
+                // Data validation
                 while (!cin || intCurrentInput < 1 || intCurrentInput > 9)
                 {
                     cout << "Please enter a valid input (between 1 and 9): ";
@@ -83,10 +95,12 @@ void generateArray(int intArray[][INT_COLS])
                     cin.ignore();
                     cin >> intCurrentInput;
                 }
+                // Set current array cell to user input
                 intArray[rows][cols] = intCurrentInput;
             }
         }
         
+        // Call function to sum rows and cols and diagonals
         calculateIfSquare(intArray);
         
         if (intSumRow1 == 15 && intSumRow2 == 15 && intSumRow3 == 15 &&
@@ -103,6 +117,16 @@ void generateArray(int intArray[][INT_COLS])
     } while (intSumRow1 != 15 && intSumRow2 != 15 && intSumRow3 != 15 &&
              intSumCol1 != 15 && intSumCol2 != 15 && intSumCol3 != 15 &&
              intSumDiag1 != 15 && intSumDiag2 != 15);
+}
+
+// Cribbed from tic-tac-toe game, manually draw out board
+void drawBoard(const int intArray[][INT_COLS])
+{
+    cout << endl << " " << intArray[0][0] << " | " << intArray[0][1] << " | " << intArray[0][2] << endl;
+    cout << "----------" << endl;
+    cout << " " << intArray[1][0] << " | " << intArray[1][1] << " | " << intArray[1][2] << endl;
+    cout << "----------" << endl;
+    cout << " " <<intArray[2][0] << " | " << intArray[2][1] << " | " << intArray[2][2] << endl << endl;
 }
 
 void calculateIfSquare(const int intArray[][INT_COLS])
