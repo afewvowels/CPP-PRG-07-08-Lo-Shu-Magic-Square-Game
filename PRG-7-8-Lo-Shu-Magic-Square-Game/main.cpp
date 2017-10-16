@@ -112,6 +112,7 @@ void generateArray(int intArray[][INT_COLS])
         else
         {
             cout << "That was not a Lo Shu square. Please try again.\n";
+            initializeArray(intArray);
         }
         
     } while (intSumRow1 != 15 && intSumRow2 != 15 && intSumRow3 != 15 &&
