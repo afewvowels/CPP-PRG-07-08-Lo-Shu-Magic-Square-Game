@@ -76,6 +76,20 @@ void generateArray(int intArray[][INT_COLS])
     // Hold user input, written over each time
     int intCurrentInput;
     
+    // Create bool flags to set if player enters number
+    // used to track which numbers have been entered
+    bool booNumber1 = false;
+    bool booNumber2 = false;
+    bool booNumber3 = false;
+    bool booNumber4 = false;
+    bool booNumber5 = false;
+    bool booNumber6 = false;
+    bool booNumber7 = false;
+    bool booNumber8 = false;
+    bool booNumber9 = false;
+    
+    bool booTurnOver = false;
+    
     do
     {
         for (int rows = 0; rows < INT_ROWS; rows++)
@@ -95,8 +109,195 @@ void generateArray(int intArray[][INT_COLS])
                     cin.ignore();
                     cin >> intCurrentInput;
                 }
-                // Set current array cell to user input
-                intArray[rows][cols] = intCurrentInput;
+                
+                do
+                {
+                    if(intCurrentInput == 1)
+                    {
+                        if(booNumber1 == false)
+                        {
+                            // Set current array cell to user input
+                            intArray[rows][cols] = intCurrentInput;
+                            booNumber1 = true;
+                            booTurnOver = true;
+                        }
+                        else
+                        {
+                            cout << "That number has already been entered.\n";
+                            cout << "Please enter another number: ";
+                            cin.clear();
+                            cin.ignore();
+                            booTurnOver = false;
+                        }
+                        cin.clear();
+                        cin.ignore();
+                    }
+                    else if(intCurrentInput == 2)
+                    {
+                        if(booNumber2 == false)
+                        {
+                            // Set current array cell to user input
+                            intArray[rows][cols] = intCurrentInput;
+                            booNumber2 = true;
+                            booTurnOver = true;
+                        }
+                        else
+                        {
+                            cout << "That number has already been entered.\n";
+                            cout << "Please enter another number: ";
+                            cin.clear();
+                            cin.ignore();
+                            booTurnOver = false;
+                        }
+                        cin.clear();
+                        cin.ignore();
+                    }
+                    else if(intCurrentInput == 3)
+                    {
+                        if(booNumber3 == false)
+                        {
+                            // Set current array cell to user input
+                            intArray[rows][cols] = intCurrentInput;
+                            booNumber3 = true;
+                            booTurnOver = true;
+                        }
+                        else
+                        {
+                            cout << "That number has already been entered.\n";
+                            cout << "Please enter another number: ";
+                            cin.clear();
+                            cin.ignore();
+                            booTurnOver = false;
+                        }
+                        cin.clear();
+                        cin.ignore();
+                    }
+                    else if(intCurrentInput == 4)
+                    {
+                        if(booNumber4 == false)
+                        {
+                            // Set current array cell to user input
+                            intArray[rows][cols] = intCurrentInput;
+                            booNumber4 = true;
+                            booTurnOver = true;
+                        }
+                        else
+                        {
+                            cout << "That number has already been entered.\n";
+                            cout << "Please enter another number: ";
+                            cin.clear();
+                            cin.ignore();
+                            booTurnOver = false;
+                        }
+                        cin.clear();
+                        cin.ignore();
+                    }
+                    else if(intCurrentInput == 5)
+                    {
+                        if(booNumber5 == false)
+                        {
+                            // Set current array cell to user input
+                            intArray[rows][cols] = intCurrentInput;
+                            booNumber5 = true;
+                            booTurnOver = true;
+                        }
+                        else
+                        {
+                            cout << "That number has already been entered.\n";
+                            cout << "Please enter another number: ";
+                            cin.clear();
+                            cin.ignore();
+                            booTurnOver = false;
+                        }
+                        cin.clear();
+                        cin.ignore();
+                    }
+                    else if(intCurrentInput == 6)
+                    {
+                        if(booNumber6 == false)
+                        {
+                            // Set current array cell to user input
+                            intArray[rows][cols] = intCurrentInput;
+                            booNumber6 = true;
+                            booTurnOver = true;
+                        }
+                        else
+                        {
+                            cout << "That number has already been entered.\n";
+                            cout << "Please enter another number: ";
+                            cin.clear();
+                            cin.ignore();
+                            booTurnOver = false;
+                        }
+                        cin.clear();
+                        cin.ignore();
+                    }
+                    else if(intCurrentInput == 7)
+                    {
+                        if(booNumber7 == false)
+                        {
+                            // Set current array cell to user input
+                            intArray[rows][cols] = intCurrentInput;
+                            booNumber7 = true;
+                            booTurnOver = true;
+                        }
+                        else
+                        {
+                            cout << "That number has already been entered.\n";
+                            cout << "Please enter another number: ";
+                            cin.clear();
+                            cin.ignore();
+                            booTurnOver = false;
+                        }
+                        cin.clear();
+                        cin.ignore();
+                    }
+                    else if(intCurrentInput == 8)
+                    {
+                        if(booNumber8 == false)
+                        {
+                            // Set current array cell to user input
+                            intArray[rows][cols] = intCurrentInput;
+                            booNumber8 = true;
+                            booTurnOver = true;
+                        }
+                        else
+                        {
+                            cout << "That number has already been entered.\n";
+                            cout << "Please enter another number: ";
+                            cin.clear();
+                            cin.ignore();
+                            booTurnOver = false;
+                        }
+                        cin.clear();
+                        cin.ignore();
+                    }
+                    else if(intCurrentInput == 9)
+                    {
+                        if(booNumber9 == false)
+                        {
+                            // Set current array cell to user input
+                            intArray[rows][cols] = intCurrentInput;
+                            booNumber9 = true;
+                            booTurnOver = true;
+                        }
+                        else
+                        {
+                            cout << "That number has already been entered.\n";
+                            cout << "Please enter another number: ";
+                            cin.clear();
+                            cin.ignore();
+                            booTurnOver = false;
+                        }
+                        cin.clear();
+                        cin.ignore();
+                    }
+    //                else
+    //                {
+    //                    // Set current array cell to user input
+    //                    intArray[rows][cols] = intCurrentInput;
+    //                }
+                }while(booTurnOver == false);
             }
         }
         
